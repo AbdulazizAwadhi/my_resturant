@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "891282905147",
+    "project_id": "almawiares",
+    "storage_bucket": "almawiares.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891282905147:android:1a80a9bd68d099ff9fa41e",
+        "android_client_info": {
+          "package_name": "resturantappabdu.resturantapp_abdu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891282905147-icd63siue8ivujm3kc4khae2kj4l7s06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7RnwbWXqOk4T0xymsVG6Vd6F8No-2G9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891282905147-icd63siue8ivujm3kc4khae2kj4l7s06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
