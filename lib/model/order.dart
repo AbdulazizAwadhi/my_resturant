@@ -1,7 +1,7 @@
 class Order
 {
   String documentId ;
-  int totalPrice ;
+  var totalPrice ;
   String phoneNumber;
   String address;
   String time;

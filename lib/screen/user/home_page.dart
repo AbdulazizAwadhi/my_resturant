@@ -285,7 +285,7 @@ class _HomePageState extends State<HomePage> {
                               image: AssetImage(products[index].pLocation),
                               width: 200,
                               height: 100,
-                              fit: BoxFit.contain,
+                              fit: BoxFit.fill,
                             ),
                           ),
                           ListTile(title: Text(
@@ -347,7 +347,7 @@ class _HomePageState extends State<HomePage> {
                               image: AssetImage(products[index].pLocation),
                               width: 200,
                               height: 100,
-                              fit: BoxFit.contain,
+                              fit: BoxFit.fill,
                             ),
                           ),
                           ListTile(title: Text(
@@ -597,7 +597,7 @@ class _HomePageState extends State<HomePage> {
                               image: AssetImage(products[index].pLocation),
                               width: 200,
                               height: 100,
-                              fit: BoxFit.contain,
+                              fit: BoxFit.fill,
                             ),
                           ),
                           ListTile(title: Text(
