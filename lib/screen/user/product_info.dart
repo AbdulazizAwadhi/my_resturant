@@ -34,13 +34,13 @@ class _ProductInfoState extends State<ProductInfo> {
     Widget typeOFrice() {
       if (product.pCategory == KChicken || product.pCategory == KGrill ||
           product.pCategory == KLamb) {
-        if (product.pName == "mthaot chicken- ‏دجاج ‏مضغوط") {
+        if (product.pName == "mthaot chicken ‎- دجاج ‏مضغوط") {
           setState(() {
             product.pDetails = " ";
           });
           return Column(children: [SizedBox(height: 5,)],);
         }
-        else if (product.pName == "shoaya chicken- ‏دجاج ‏شواية"){
+        else if (product.pName == "shoaya chicken ‎- دجاج ‏شواية"){
           return Column(
             children: [
               Text(getTranslate(context, "type_of_rice"),
