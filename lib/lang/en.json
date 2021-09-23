@@ -165,5 +165,7 @@
   "edit_product_page": "Edit product page",
   "manage_product_page": "Manage product page",
   "orders_details_page": "Order details page",
-  "order_screen_page": "Order screen page"
+  "order_screen_page": "Order screen page",
+  "ok": "OK",
+  "this_app": "This app provide delivery service so it would like to use your location to processed with your order"
 }

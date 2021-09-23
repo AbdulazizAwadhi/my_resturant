@@ -79,7 +79,7 @@ class OrderView extends StatelessWidget {
                                       Radius.circular(16)),
                                 ),
 
-                                height: screenHeight * .17,
+                                height: screenHeight * .21,
                                 child: Row(
                                   children: [
                                     Padding(
@@ -149,7 +149,7 @@ class OrderView extends StatelessWidget {
                           thickness: 4,
                           height: 10,),
                         Container(
-                          height: screenHeight * .50,
+                          height: screenHeight * .55,
                           width: screenWidth * .8,
                           decoration: BoxDecoration(
                             color: Color(0xFF848482),

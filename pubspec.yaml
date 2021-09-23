@@ -29,6 +29,7 @@ dependencies:
   shared_preferences:
   google_maps_flutter: ^0.5.33
   geolocator: ^6.1.0
+  location: ^3.0.0
   firebase_messaging: ^7.0.3
 
 

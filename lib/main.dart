@@ -1,8 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:resturantapp_abdu/constant.dart';
+import 'package:resturantapp_abdu/localization/localization_method.dart';
 import 'package:resturantapp_abdu/localization/set_localization.dart';
 import 'package:resturantapp_abdu/provider/cart_item.dart';
 import 'package:resturantapp_abdu/provider/modal_hud.dart';
@@ -25,6 +28,7 @@ import 'package:resturantapp_abdu/screen/user/home_page.dart';
 import 'package:resturantapp_abdu/screen/user/order_view.dart';
 import 'package:resturantapp_abdu/screen/user/product_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:location/location.dart';
 
 Future<void> main()async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +47,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
   bool isUserLoggedIn = false;
   Locale _local;
   void setLocale( Locale locale){
@@ -50,9 +55,61 @@ class _MyAppState extends State<MyApp> {
       _local = locale;
     });
   }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    checklocationserviceindevice();
+
+  }
+  bool _serviceEnabled;
+  PermissionStatus _permissionGranted;
+  //this method to check if location service is on
+  Future<void> checklocationserviceindevice()async{
+    Location location = new Location();
+    _serviceEnabled = await location.serviceEnabled();
+    if(_serviceEnabled){
+      _permissionGranted = await location.hasPermission();
+      if(_permissionGranted == PermissionStatus.granted)
+        {
+          print("GRANTED");
+        }else{
+        _permissionGranted = await location.requestPermission();
+        if(_permissionGranted == PermissionStatus.granted)
+        {
+
+          print("GRANTED NEW");
+        }else{
+          SystemNavigator.pop();
+        }
+      }
+    }else{
+      _serviceEnabled = await location.requestService();
+      if(_serviceEnabled){
+        _permissionGranted = await location.hasPermission();
+        if(_permissionGranted == PermissionStatus.granted)
+        {
+          print("GRANTED");
+        }else{
+          _permissionGranted = await location.requestPermission();
+          if(_permissionGranted == PermissionStatus.granted)
+          {
+            print("GRANTED AFTER EDIT");
+          }else{
+            SystemNavigator.pop();
+          }
+        }
+      }else{
+        SystemNavigator.pop();
+      }
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
+
+
     return FutureBuilder<SharedPreferences>
       (
       future: SharedPreferences.getInstance(),
@@ -63,7 +120,7 @@ class _MyAppState extends State<MyApp> {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: Scaffold(
-            body: Center( child: Text("Loading...")
+            body: Center( child: Text("Loading.....")
             ),
           ),
           );
@@ -126,7 +183,9 @@ class _MyAppState extends State<MyApp> {
           ) ;
         }
       },
+
     );
+
   }
 }
 

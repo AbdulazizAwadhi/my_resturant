@@ -76,7 +76,7 @@ class _CartScreenState extends State<CartScreen> {
                                       borderRadius: BorderRadius.all(Radius.circular(16)),
                                     ),
 
-                                    height: screenHeight * .17,
+                                    height: screenHeight * .21,
                                     child: Row(
                                       children: [
                                         Padding(

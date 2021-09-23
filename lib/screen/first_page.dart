@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resturantapp_abdu/localization/localization_method.dart';
 import 'package:resturantapp_abdu/localization/set_localization.dart';
@@ -18,6 +19,7 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -28,16 +30,18 @@ class _FirstPageState extends State<FirstPage> {
           Padding(
             padding: EdgeInsets.all(8),
             child: DropdownButton(
+              dropdownColor: Color(0xffFEA209),
               underline: SizedBox(),
               hint: Text(getTranslate(context, "language"),style: TextStyle(color: Colors.grey,fontSize: 16),),
               icon: Icon(Icons.language , color: Color(0xffFEA209), size: 40,),
               items:
                 Language.LanguageList().map<DropdownMenuItem<Language>>((lang) => DropdownMenuItem(
+
                   value: lang,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(lang.flag,style: TextStyle(fontSize: 30),),
+                      //Text(lang.flag,style: TextStyle(fontSize: 30),),
                       Text(lang.name,style: TextStyle(fontSize: 20),)
                     ],
                   ),
@@ -100,7 +104,9 @@ class _FirstPageState extends State<FirstPage> {
               SizedBox(height: 20,),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, LoginScreen.id);
+
+                  //Navigator.pushNamed(context, LoginScreen.id);
+                  showCustomDialog(context);
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -179,4 +185,31 @@ class _FirstPageState extends State<FirstPage> {
     }
     MyApp.setLocale(context, _temp);
   }
+
+  void showCustomDialog(context) async
+  {
+
+    AlertDialog alertDialog = AlertDialog(
+      backgroundColor: Color(0xffFEA209),
+
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
+      actions: [
+        MaterialButton(
+          child: Text(getTranslate(context, "ok"),style: TextStyle(fontSize: 15),),
+          onPressed: ()
+          {
+            Navigator.pushNamed(context, LoginScreen.id);
+          },
+        ),
+      ],
+      content: Text(getTranslate(context, "this_app"),style:TextStyle(fontWeight: FontWeight.bold,fontSize: 16) ,),
+      title: Icon(Icons.location_on,size: 40,),
+    );
+    await showDialog(context: context,builder:(context)
+    {
+      return alertDialog;
+
+    });
+  }
+
 }

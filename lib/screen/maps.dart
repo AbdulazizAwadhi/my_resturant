@@ -1,5 +1,6 @@
 import 'dart:collection';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
@@ -9,19 +10,24 @@ import 'package:resturantapp_abdu/model/product.dart';
 import 'package:resturantapp_abdu/provider/cart_item.dart';
 import 'package:resturantapp_abdu/screen/user/cart_screen.dart';
 import 'package:resturantapp_abdu/services/store.dart';
+import 'package:location/location.dart';
 
 class Maps extends StatefulWidget {
+
   static String id = "Maps";
   @override
   _MapsState createState() => _MapsState();
 }
 
-class _MapsState extends State<Maps> {
+class _MapsState extends State<Maps>  {
+
   var mark = HashSet<Marker>(); //this is collection to add marker
   var currentLocation;
   bool mapToggle = false ;
   GoogleMapController mapController;
   Set latlong ;
+
+
   @override
   void initState() {
     // TODO: implement initState
@@ -30,10 +36,8 @@ class _MapsState extends State<Maps> {
       setState(() {
         currentLocation = curloc;
         mapToggle = true;
-
       });
-
-      });
+    });
   }
 
   @override
