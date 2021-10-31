@@ -35,10 +35,10 @@ class _ManageProductState extends State<ManageProduct> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Product> product = [];
-            for (var doc in snapshot.data.documents) {
+            for (var doc in snapshot.data.docs) {
               var data = doc.data();
               product.add(Product(
-                pId: doc.documentID,
+                pId: doc.id,
                 pName: data[KProductName],
                 pFPrice: data[KProductFPrice],
                 pMPrice: data[KProductMPrice],

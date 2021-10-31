@@ -19,7 +19,7 @@ class AddProduct extends StatelessWidget {
         centerTitle: true,
         title: Text(getTranslate(context, "add_product_page")),
       ),
-      resizeToAvoidBottomPadding: false,
+      //resizeToAvoidBottomPadding: false, // Deprecated
       backgroundColor: Colors.grey,
       body: Form(
         key: _globalKey,

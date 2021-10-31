@@ -46,7 +46,7 @@ class OrderView extends StatelessWidget {
         .top;
     return Scaffold(
       backgroundColor: Color(0xFF4B3621),
-      resizeToAvoidBottomPadding: false,
+      //resizeToAvoidBottomPadding: false, // Deprecated
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,

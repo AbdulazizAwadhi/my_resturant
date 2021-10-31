@@ -44,7 +44,7 @@ class _CartScreenState extends State<CartScreen> {
    final double appBarHeight = AppBar().preferredSize.height;
    final double statusBarHeight = MediaQuery.of(context).padding.top;
    return Scaffold(
-     resizeToAvoidBottomPadding: false,
+     //resizeToAvoidBottomPadding: false, // Deprecated
      appBar: AppBar(
        elevation: 0,
        backgroundColor: Colors.white,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:resturantapp_abdu/localization/localization_method.dart';
+import 'package:resturantapp_abdu/main.dart';
+import 'package:resturantapp_abdu/model/language.dart';
 import 'package:resturantapp_abdu/provider/modal_hud.dart';
 import 'package:resturantapp_abdu/screen/login_screen.dart';
 import 'package:resturantapp_abdu/widgets/custom_text_field.dart';
@@ -45,6 +48,14 @@ class SignupScreen extends StatelessWidget {
                   CustomTextField(OnClick: (value){_email=value;},hint: getTranslate(context, "enter_your_email"), icon: Icons.email,),
                   SizedBox(height: height * .02,),
                   CustomTextField(OnClick: (value){_password=value;},hint: getTranslate(context, "enter_your_password"), icon: Icons.vpn_key,),
+                  SizedBox(height: height * .02),
+                  Text(
+                    Localizations.localeOf(context).toLanguageTag()=='en-US'?'* Password must be greater that 8 digits or characters.':'*  كلمة المرور يجب ان تكون اكبر من ٨ احرف او ارقام',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
                   SizedBox(height: height * .05,),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 130),

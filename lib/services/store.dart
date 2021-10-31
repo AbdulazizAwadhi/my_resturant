@@ -24,11 +24,11 @@ class Store {
   }
   //this method will delete product admin from edit product screen
   deleteProduct(documentId) {
-    _firestore.collection(KProductCollection).document(documentId).delete();
+    _firestore.collection(KProductCollection).doc(documentId).delete();
   }
 //this method to edit product by admin
   editProduct(data, documentId) {
-    _firestore.collection(KProductCollection).document(documentId).updateData(
+    _firestore.collection(KProductCollection).doc(documentId).update(
         data);
   }
   stroeOrders(data, List<Product>products)
@@ -54,7 +54,7 @@ class Store {
     return _firestore.collection(KOrders).doc(documentId).collection(KOrderDetails).snapshots();
   }
   deleteOrder(documentId) {
-    _firestore.collection(KOrders).document(documentId).delete();
+    _firestore.collection(KOrders).doc(documentId).delete();
   }
 
 }

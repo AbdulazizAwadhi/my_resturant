@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>مطعم المئوية</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -22,6 +24,21 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Allow مطعم المئوية to connect to all network usage.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>The مطعم المئوية would like to use your location to processed with your order</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>The مطعم المئوية would like to use your location to processed with your order</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The مطعم المئوية would like to use your location to processed with your order</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,5 +58,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.resturantappabdu.resturantappAbdu.ColorFeed.refresh</string>
+		<string>com.resturantappabdu.resturantappAbdu.ColorFeed.db_cleaning</string>
+	</array>
 </dict>
 </plist>

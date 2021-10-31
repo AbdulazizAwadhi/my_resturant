@@ -166,10 +166,10 @@ class _HomePageState extends State<HomePage> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List<Product> products = [];
-          for (var doc in snapshot.data.documents) {
+          for (var doc in snapshot.data.docs) {
             var data = doc.data();
             products.add(Product(
-              pId: doc.documentID,
+              pId: doc.id,
               pName: data[KProductName],
               pFPrice: data[KProductFPrice],
               pMPrice: data[KProductMPrice],
